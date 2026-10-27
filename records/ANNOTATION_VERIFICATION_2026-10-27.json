@@ -1,0 +1,152 @@
+{
+  "source": "D:\\SAR\\project\\FAIR-CSAR-Full-Pose-Ordered\\FAIR-CSAR-Full-Pose-Ordered",
+  "class_names_status": "Candidates from legacy sar_pose.yaml; requires semantic review",
+  "files": 14665,
+  "objects": 85285,
+  "parse_errors": [],
+  "image_headers": {
+    "1024x1024 L": 14665
+  },
+  "geometry_by_split_class": {
+    "trainval/class_0": {
+      "objects": 20417,
+      "box_crosses_image_edge": 2003,
+      "point_outside_image": 24,
+      "point_outside_box_1px_tolerance": 101
+    },
+    "trainval/class_3": {
+      "objects": 2114,
+      "box_crosses_image_edge": 692,
+      "box_value_outside_0_1": 45
+    },
+    "trainval/class_2": {
+      "objects": 15364,
+      "point_outside_box_1px_tolerance": 2
+    },
+    "trainval/class_1": {
+      "objects": 29713,
+      "box_crosses_image_edge": 4140,
+      "point_outside_box_1px_tolerance": 12,
+      "point_outside_image": 2
+    },
+    "trainval/class_4": {
+      "objects": 1690,
+      "box_crosses_image_edge": 161
+    },
+    "test/class_3": {
+      "objects": 693,
+      "box_crosses_image_edge": 160,
+      "box_value_outside_0_1": 5
+    },
+    "test/class_0": {
+      "objects": 3062,
+      "box_crosses_image_edge": 289,
+      "point_outside_image": 2,
+      "point_outside_box_1px_tolerance": 1
+    },
+    "test/class_1": {
+      "objects": 7500,
+      "box_crosses_image_edge": 820,
+      "point_outside_image": 1,
+      "point_outside_box_1px_tolerance": 1
+    },
+    "test/class_2": {
+      "objects": 4062,
+      "point_outside_box_1px_tolerance": 3
+    },
+    "test/class_4": {
+      "objects": 670,
+      "box_crosses_image_edge": 42,
+      "box_value_outside_0_1": 1
+    }
+  },
+  "order_diagnostics": {
+    "trainval/class_0": {
+      "pca_monotone_1px": 8,
+      "angular_cycle_either_direction": 20246,
+      "xy_lexicographic": 1
+    },
+    "trainval/class_3": {
+      "pca_monotone_1px": 2114,
+      "angular_cycle_either_direction": 23,
+      "xy_lexicographic": 95
+    },
+    "trainval/class_2": {
+      "pca_monotone_1px": 3,
+      "angular_cycle_either_direction": 15284,
+      "xy_lexicographic": 0
+    },
+    "trainval/class_1": {
+      "pca_monotone_1px": 29713,
+      "angular_cycle_either_direction": 20,
+      "xy_lexicographic": 143
+    },
+    "trainval/class_4": {
+      "pca_monotone_1px": 1690,
+      "angular_cycle_either_direction": 3,
+      "xy_lexicographic": 9
+    },
+    "test/class_3": {
+      "pca_monotone_1px": 693,
+      "angular_cycle_either_direction": 8,
+      "xy_lexicographic": 26
+    },
+    "test/class_0": {
+      "pca_monotone_1px": 0,
+      "angular_cycle_either_direction": 3048,
+      "xy_lexicographic": 0
+    },
+    "test/class_1": {
+      "pca_monotone_1px": 7500,
+      "angular_cycle_either_direction": 6,
+      "xy_lexicographic": 18
+    },
+    "test/class_2": {
+      "pca_monotone_1px": 0,
+      "angular_cycle_either_direction": 4039,
+      "xy_lexicographic": 0
+    },
+    "test/class_4": {
+      "pca_monotone_1px": 670,
+      "angular_cycle_either_direction": 3,
+      "xy_lexicographic": 0
+    }
+  },
+  "legacy_loader_geometry_simulation": {
+    "trainval": {
+      "total_files": 11959,
+      "detect_rejected_files": 45,
+      "pose_rejected_files": 25,
+      "both_rejected_files": 0,
+      "rejected_by_either": 70,
+      "detect_accepted_files": 11914,
+      "pose_accepted_files": 11934,
+      "detect_rejected_objects": 60,
+      "pose_rejected_objects": 369,
+      "common_filter_retained_objects": 68869
+    },
+    "test": {
+      "total_files": 2706,
+      "detect_rejected_files": 6,
+      "pose_rejected_files": 3,
+      "both_rejected_files": 0,
+      "rejected_by_either": 9,
+      "detect_accepted_files": 2700,
+      "pose_accepted_files": 2703,
+      "detect_rejected_objects": 6,
+      "pose_rejected_objects": 70,
+      "common_filter_retained_objects": 15911
+    }
+  },
+  "limits": [
+    "Headers read for all images; full pixel decode only for rendered examples.",
+    "Geometric order diagnostics do not establish semantic point identity or sorting provenance.",
+    "Visual samples do not certify every target or official class mapping."
+  ],
+  "date": "2026-10-27",
+  "review_output": "outputs/annotation-review-2026-10-27",
+  "typical_visual_examples": 15,
+  "boundary_visual_examples": 80,
+  "suspected_class_examples": 5,
+  "suspected_class_status": "Five class-4 annotations in one source scene visually resemble a bridge; unconfirmed and unchanged."
+}

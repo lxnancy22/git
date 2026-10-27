@@ -1,0 +1,86 @@
+{
+  "FAIR-CSAR-Full-Pose-Ordered": {
+    "splits": {
+      "trainval": {
+        "labels": 11959,
+        "source_image_prefixes": 105
+      },
+      "test": {
+        "labels": 2706,
+        "source_image_prefixes": 26
+      }
+    },
+    "shared_source_image_prefixes": [],
+    "rule": "Remove optional _objN and final two integer tile-offset suffixes; filename inference only."
+  },
+  "FAIR-CSAR-Mini": {
+    "splits": {
+      "trainval": {
+        "labels": 1195,
+        "source_image_prefixes": 102
+      },
+      "test": {
+        "labels": 270,
+        "source_image_prefixes": 25
+      }
+    },
+    "shared_source_image_prefixes": [],
+    "rule": "Remove optional _objN and final two integer tile-offset suffixes; filename inference only."
+  },
+  "FAIR-CSAR-Mini-Pose": {
+    "splits": {
+      "trainval": {
+        "labels": 1195,
+        "source_image_prefixes": 102
+      },
+      "test": {
+        "labels": 270,
+        "source_image_prefixes": 25
+      }
+    },
+    "shared_source_image_prefixes": [],
+    "rule": "Remove optional _objN and final two integer tile-offset suffixes; filename inference only."
+  },
+  "FAIR-CSAR-Mini-Pose-Aligned": {
+    "splits": {
+      "trainval": {
+        "labels": 7188,
+        "source_image_prefixes": 102
+      },
+      "test": {
+        "labels": 1431,
+        "source_image_prefixes": 25
+      }
+    },
+    "shared_source_image_prefixes": [],
+    "rule": "Remove optional _objN and final two integer tile-offset suffixes; filename inference only."
+  },
+  "FAIR-CSAR-Mini-Pose-Ordered": {
+    "splits": {
+      "trainval": {
+        "labels": 1195,
+        "source_image_prefixes": 102
+      },
+      "test": {
+        "labels": 270,
+        "source_image_prefixes": 25
+      }
+    },
+    "shared_source_image_prefixes": [],
+    "rule": "Remove optional _objN and final two integer tile-offset suffixes; filename inference only."
+  },
+  "FAIR-CSAR-Mini-Pose-XYSort": {
+    "splits": {
+      "trainval": {
+        "labels": 1195,
+        "source_image_prefixes": 102
+      },
+      "test": {
+        "labels": 270,
+        "source_image_prefixes": 25
+      }
+    },
+    "shared_source_image_prefixes": [],
+    "rule": "Remove optional _objN and final two integer tile-offset suffixes; filename inference only."
+  }
+}

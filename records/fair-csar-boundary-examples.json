@@ -1,0 +1,1112 @@
+{
+  "trainval": {
+    "bbox_bad_files": 45,
+    "point_bad_files": 25,
+    "rows": [
+      {
+        "file": "GF3B_MYC_SL_005044_E117.3_N39.2_20221107_L1A_HH_L10000113028_00512_33631.txt",
+        "line": 1,
+        "bbox_bad": false,
+        "point_bad": true,
+        "bbox": [
+          0.000977,
+          0.569336,
+          0.035156,
+          0.037109
+        ],
+        "out_of_range_points": [
+          -0.016602
+        ]
+      },
+      {
+        "file": "GF3B_MYC_SL_005044_E117.3_N39.2_20221107_L1A_HH_L10000113028_04096_25296.txt",
+        "line": 17,
+        "bbox_bad": false,
+        "point_bad": true,
+        "bbox": [
+          0.999512,
+          0.555664,
+          0.032227,
+          0.033203
+        ],
+        "out_of_range_points": [
+          1.015625
+        ]
+      },
+      {
+        "file": "GF3_KAS_SL_005659_E77.1_N28.6_20170906_L1A_HH_L10002590291_11776_15540.txt",
+        "line": 1,
+        "bbox_bad": false,
+        "point_bad": true,
+        "bbox": [
+          0.723145,
+          0.001465,
+          0.022461,
+          0.020508
+        ],
+        "out_of_range_points": [
+          -0.008789
+        ]
+      },
+      {
+        "file": "GF3_KAS_SL_005659_E77.1_N28.6_20170906_L1A_HH_L10002590291_12288_15540.txt",
+        "line": 3,
+        "bbox_bad": false,
+        "point_bad": true,
+        "bbox": [
+          0.223145,
+          0.001465,
+          0.022461,
+          0.020508
+        ],
+        "out_of_range_points": [
+          -0.000977
+        ]
+      },
+      {
+        "file": "GF3_KAS_SL_005659_E77.1_N28.6_20170906_L1A_HH_L10004912834_11776_15540.txt",
+        "line": 1,
+        "bbox_bad": false,
+        "point_bad": true,
+        "bbox": [
+          0.949707,
+          0.000977,
+          0.020508,
+          0.019531
+        ],
+        "out_of_range_points": [
+          -0.008789
+        ]
+      },
+      {
+        "file": "GF3_KAS_SL_005659_E77.1_N28.6_20170906_L1A_HH_L10004912834_12288_15540.txt",
+        "line": 2,
+        "bbox_bad": false,
+        "point_bad": true,
+        "bbox": [
+          0.449707,
+          0.000977,
+          0.020508,
+          0.019531
+        ],
+        "out_of_range_points": [
+          -0.008789
+        ]
+      },
+      {
+        "file": "GF3_KAS_SL_023978_E104.0_N1.4_20210228_L1A_HH_L10000000001_05632_15228.txt",
+        "line": 3,
+        "bbox_bad": false,
+        "point_bad": true,
+        "bbox": [
+          0.004395,
+          0.932617,
+          0.016602,
+          0.035156
+        ],
+        "out_of_range_points": [
+          -0.00293
+        ]
+      },
+      {
+        "file": "GF3_KAS_SL_023978_E104.0_N1.4_20210228_L1A_HH_L10000000001_05632_16497.txt",
+        "line": 1,
+        "bbox_bad": false,
+        "point_bad": true,
+        "bbox": [
+          0.004395,
+          0.433594,
+          0.016602,
+          0.035156
+        ],
+        "out_of_range_points": [
+          -0.003906
+        ]
+      },
+      {
+        "file": "GF3_KAS_SL_031006_W117.2_N32.7_20220701_L1A_HH_L10000000001_05120_18024.txt",
+        "line": 4,
+        "bbox_bad": false,
+        "point_bad": true,
+        "bbox": [
+          0.001465,
+          0.134766,
+          0.008789,
+          0.009766
+        ],
+        "out_of_range_points": [
+          -0.001953
+        ]
+      },
+      {
+        "file": "GF3_KAS_SL_032260_W117.2_N32.7_20220926_L1A_HH_L10000000001_04608_15771.txt",
+        "line": 3,
+        "bbox_bad": false,
+        "point_bad": true,
+        "bbox": [
+          0.0,
+          0.96875,
+          0.009766,
+          0.011719
+        ],
+        "out_of_range_points": [
+          -0.004883
+        ]
+      },
+      {
+        "file": "GF3_KAS_SL_032260_W117.2_N32.7_20220926_L1A_HH_L10000000001_04608_18024.txt",
+        "line": 3,
+        "bbox_bad": false,
+        "point_bad": true,
+        "bbox": [
+          0.0,
+          0.46875,
+          0.009766,
+          0.011719
+        ],
+        "out_of_range_points": [
+          -0.004883
+        ]
+      },
+      {
+        "file": "GF3_KAS_SL_036194_E100.9_N12.6_20230625_L1A_HH_L10000000001_11776_09800.txt",
+        "line": 2,
+        "bbox_bad": false,
+        "point_bad": true,
+        "bbox": [
+          0.992188,
+          0.982422,
+          0.017578,
+          0.019531
+        ],
+        "out_of_range_points": [
+          1.000977
+        ]
+      },
+      {
+        "file": "GF3_KAS_SL_038702_W158.0_N21.3_20231216_L1A_HH_L10000000001_02048_13288.txt",
+        "line": 12,
+        "bbox_bad": false,
+        "point_bad": true,
+        "bbox": [
+          0.001953,
+          0.657715,
+          0.021484,
+          0.02832
+        ],
+        "out_of_range_points": [
+          -0.008789
+        ]
+      },
+      {
+        "file": "GF3_KAS_SL_038702_W158.0_N21.3_20231216_L1A_HH_L10000000001_03072_19328.txt",
+        "line": 1,
+        "bbox_bad": false,
+        "point_bad": true,
+        "bbox": [
+          0.541992,
+          0.00293,
+          0.019531,
+          0.019531
+        ],
+        "out_of_range_points": [
+          -0.006836
+        ]
+      },
+      {
+        "file": "GF3_KAS_SL_038702_W158.0_N21.3_20231216_L1A_HH_L10000000001_03584_16912.txt",
+        "line": 4,
+        "bbox_bad": false,
+        "point_bad": true,
+        "bbox": [
+          0.039062,
+          0.998535,
+          0.015625,
+          0.014648
+        ],
+        "out_of_range_points": [
+          1.005859
+        ]
+      },
+      {
+        "file": "GF3_KAS_SL_038702_W158.0_N21.3_20231216_L1A_HH_L10000000001_03584_16912.txt",
+        "line": 11,
+        "bbox_bad": false,
+        "point_bad": true,
+        "bbox": [
+          0.000977,
+          0.748535,
+          0.017578,
+          0.018555
+        ],
+        "out_of_range_points": [
+          -0.007812
+        ]
+      },
+      {
+        "file": "GF3_KAS_SL_038702_W158.0_N21.3_20231216_L1A_HH_L10000000001_03584_18120.txt",
+        "line": 13,
+        "bbox_bad": false,
+        "point_bad": true,
+        "bbox": [
+          0.000977,
+          0.249512,
+          0.017578,
+          0.018555
+        ],
+        "out_of_range_points": [
+          -0.007812
+        ]
+      },
+      {
+        "file": "GF3_KAS_SL_038702_W158.0_N21.3_20231216_L1A_HH_L10000000001_03584_19328.txt",
+        "line": 1,
+        "bbox_bad": false,
+        "point_bad": true,
+        "bbox": [
+          0.041992,
+          0.002441,
+          0.019531,
+          0.018555
+        ],
+        "out_of_range_points": [
+          -0.006836
+        ]
+      },
+      {
+        "file": "GF3_KAS_SL_038702_W158.0_N21.3_20231216_L1A_HH_L10000000001_07168_01208.txt",
+        "line": 2,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.5,
+          0.458008,
+          1.015625,
+          0.289062
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_KRN_SL_031001_W157.9_N21.4_20220630_L1A_HH_L10000000001_04096_27092.txt",
+        "line": 1,
+        "bbox_bad": false,
+        "point_bad": true,
+        "bbox": [
+          0.945801,
+          0.000977,
+          0.010742,
+          0.009766
+        ],
+        "out_of_range_points": [
+          -0.003906
+        ]
+      },
+      {
+        "file": "GF3_KRN_SL_031001_W157.9_N21.4_20220630_L1A_HH_L10000000001_05120_25008.txt",
+        "line": 3,
+        "bbox_bad": false,
+        "point_bad": true,
+        "bbox": [
+          0.000977,
+          0.916504,
+          0.013672,
+          0.014648
+        ],
+        "out_of_range_points": [
+          -0.005859
+        ]
+      },
+      {
+        "file": "GF3_KRN_SL_031001_W157.9_N21.4_20220630_L1A_HH_L10000000001_05120_26050.txt",
+        "line": 7,
+        "bbox_bad": false,
+        "point_bad": true,
+        "bbox": [
+          0.000977,
+          0.416504,
+          0.013672,
+          0.014648
+        ],
+        "out_of_range_points": [
+          -0.005859
+        ]
+      },
+      {
+        "file": "GF3_KRN_SL_031001_W157.9_N21.4_20220630_L1A_HH_L10000000001_08704_09378.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.5,
+          0.856934,
+          1.011719,
+          0.274414
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_KRN_SL_031001_W157.9_N21.4_20220630_L1A_HH_L10000000001_08704_10420.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.5,
+          0.357422,
+          1.011719,
+          0.273438
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_KRN_SL_032673_W158.0_N21.4_20221024_L1A_HH_L10000000001_07168_09378.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.5,
+          0.858887,
+          1.015625,
+          0.276367
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_KRN_SL_032673_W158.0_N21.4_20221024_L1A_HH_L10000000001_07168_10420.txt",
+        "line": 2,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.5,
+          0.358887,
+          1.015625,
+          0.27832
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_KRN_SL_033264_W157.9_N21.4_20221204_L1A_HH_L10000000001_04608_24528.txt",
+        "line": 8,
+        "bbox_bad": false,
+        "point_bad": true,
+        "bbox": [
+          0.003906,
+          0.662598,
+          0.037109,
+          0.038086
+        ],
+        "out_of_range_points": [
+          -0.014648
+        ]
+      },
+      {
+        "file": "GF3_KRN_SL_033264_W157.9_N21.4_20221204_L1A_HH_L10000000001_09216_10512.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.5,
+          0.819336,
+          1.013672,
+          0.283203
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_KRN_SL_033264_W157.9_N21.4_20221204_L1A_HH_L10000000001_09216_11680.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.5,
+          0.319336,
+          1.013672,
+          0.283203
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_MYN_SL_015581_E114.2_N30.8_20190726_L1A_HH_L10004143063_03584_28000.txt",
+        "line": 2,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.529297,
+          0.529297,
+          1.072266,
+          1.060547
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_MYN_SL_015581_E114.2_N30.8_20190726_L1A_HH_L10004143063_05120_28000.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.490234,
+          0.5,
+          0.396484,
+          1.058594
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_MYN_SL_015581_E114.2_N30.8_20190726_L1A_HH_L10004143063_05120_29378.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.580078,
+          0.472168,
+          0.380859,
+          1.00293
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_MYN_SL_022507_E118.1_N24.5_20201118_L1A_HH_L10000000001_08192_23968.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.5,
+          0.593262,
+          1.050781,
+          0.776367
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_MYN_SL_022507_E118.1_N24.5_20201118_L1A_HH_L10000000001_09216_22470.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.496094,
+          0.374023,
+          1.042969,
+          0.769531
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_MYN_SL_022507_E118.1_N24.5_20201118_L1A_HH_L10000000001_09728_20972.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.5,
+          0.509766,
+          1.050781,
+          0.777344
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_MYN_SL_022507_E118.1_N24.5_20201118_L1A_HH_L10000000001_10240_19474.txt",
+        "line": 2,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.508789,
+          0.64209,
+          1.033203,
+          0.762695
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_MYN_SL_022507_E118.1_N24.5_20201118_L1A_HH_L10000000001_10752_20972.txt",
+        "line": 2,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.40625,
+          0.5,
+          0.738281,
+          1.03125
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_MYN_SL_024503_E139.7_N35.5_20210405_L1A_HH_L10000000001_07680_06420.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.481445,
+          0.62207,
+          1.060547,
+          0.847656
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_MYN_SL_024503_E139.7_N35.5_20210405_L1A_HH_L10000000001_10240_12840.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.437988,
+          0.499512,
+          0.469727,
+          1.057617
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_MYN_SL_025094_E139.7_N35.5_20210516_L1A_HH_L10000000026_07680_14364.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.688965,
+          0.5,
+          0.397461,
+          1.046875
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_MYN_SL_025094_E139.7_N35.5_20210516_L1A_HH_L10000000026_08192_14364.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.189453,
+          0.501465,
+          0.396484,
+          1.043945
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_MYN_SL_025678_E121.0_N14.6_20210626_L1A_HH_L10000000001_03584_23968.txt",
+        "line": 3,
+        "bbox_bad": false,
+        "point_bad": true,
+        "bbox": [
+          0.997559,
+          0.669922,
+          0.026367,
+          0.029297
+        ],
+        "out_of_range_points": [
+          1.010742
+        ]
+      },
+      {
+        "file": "GF3_MYN_SL_026133_E104.0_N1.3_20210727_L1A_HH_L10000000001_09216_08922.txt",
+        "line": 14,
+        "bbox_bad": false,
+        "point_bad": true,
+        "bbox": [
+          0.983398,
+          0.191895,
+          0.044922,
+          0.053711
+        ],
+        "out_of_range_points": [
+          1.005859
+        ]
+      },
+      {
+        "file": "GF3_MYN_SL_026133_E104.0_N1.3_20210727_L1A_HH_L10000000001_09216_11896.txt",
+        "line": 3,
+        "bbox_bad": false,
+        "point_bad": true,
+        "bbox": [
+          0.990723,
+          0.114258,
+          0.024414,
+          0.033203
+        ],
+        "out_of_range_points": [
+          1.00293
+        ]
+      },
+      {
+        "file": "GF3_MYN_SL_027848_E139.7_N35.5_20211123_L1A_HH_L10000000001_06656_12876.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.807129,
+          0.496582,
+          0.415039,
+          1.032227
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_MYN_SL_027848_E139.7_N35.5_20211123_L1A_HH_L10000000001_07168_12876.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.307129,
+          0.49707,
+          0.415039,
+          1.03125
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_MYN_SL_028438_E139.7_N35.5_20220103_L1A_HH_L10000000001_05120_07212.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.516602,
+          0.364746,
+          1.041016,
+          0.829102
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_MYN_SL_028704_E139.7_N35.5_20220122_L1A_HH_L10000000001_06656_20490.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.498047,
+          0.820312,
+          1.035156,
+          0.382812
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_MYN_SL_028704_E139.7_N35.5_20220122_L1A_HH_L10000000001_06656_21856.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.499512,
+          0.320312,
+          1.038086,
+          0.384766
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_MYN_SL_033043_E128.6_N35.1_20221119_L1A_HH_L10000000001_04096_24588.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.5,
+          0.709961,
+          1.033203,
+          0.445312
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_MYN_SL_033043_E128.6_N35.1_20221119_L1A_HH_L10000000001_04096_25954.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.502441,
+          0.211426,
+          1.02832,
+          0.442383
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_MYN_SL_036192_W157.9_N21.4_20230625_L1A_HH_L10000000001_08704_10548.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.5,
+          0.79541,
+          1.011719,
+          0.280273
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_MYN_SL_036192_W157.9_N21.4_20230625_L1A_HH_L10000000001_08704_11720.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.5,
+          0.29541,
+          1.011719,
+          0.27832
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_MYN_SL_038505_W157.9_N21.4_20231203_L1A_HH_L10000000001_04608_20400.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.5,
+          0.20459,
+          1.005859,
+          0.155273
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_MYN_SL_038505_W157.9_N21.4_20231203_L1A_HH_L10000000001_04608_19125.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.5,
+          0.70459,
+          1.005859,
+          0.155273
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_SAY_SL_019033_E104.0_N1.3_20200322_L1A_HH_L10000000001_00512_27600.txt",
+        "line": 1,
+        "bbox_bad": false,
+        "point_bad": true,
+        "bbox": [
+          0.012695,
+          0.79834,
+          0.074219,
+          0.077148
+        ],
+        "out_of_range_points": [
+          -0.024414
+        ]
+      },
+      {
+        "file": "GF3_SAY_SL_022485_E113.8_N22.6_20201116_L1A_HH_L10000000001_00512_18003.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.729492,
+          0.536133,
+          0.804688,
+          1.173828
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_SAY_SL_022485_E113.8_N22.6_20201116_L1A_HH_L10000000001_00512_19062.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.538086,
+          0.383301,
+          0.716797,
+          1.014648
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_SAY_SL_022485_E113.8_N22.6_20201116_L1A_HH_L10000000001_01024_15885.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.773926,
+          0.546387,
+          0.791992,
+          1.15332
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_SAY_SL_022485_E113.8_N22.6_20201116_L1A_HH_L10000000001_01024_16944.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.524902,
+          0.499512,
+          0.844727,
+          1.24707
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_SAY_SL_022485_E113.8_N22.6_20201116_L1A_HH_L10000000001_01024_18003.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.270508,
+          0.462891,
+          0.804688,
+          1.173828
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_SAY_SL_022485_E113.8_N22.6_20201116_L1A_HH_L10000000001_01536_15885.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.302734,
+          0.493652,
+          0.792969,
+          1.155273
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_SAY_SL_022485_E113.8_N22.6_20201116_L1A_HH_L10000000001_09216_04236.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.555664,
+          0.684082,
+          1.207031,
+          0.952148
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_SAY_SL_022485_E113.8_N22.6_20201116_L1A_HH_L10000000001_09216_05295.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.449707,
+          0.256836,
+          1.147461,
+          0.908203
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_SAY_SL_022485_E113.8_N22.6_20201116_L1A_HH_L10000000001_09728_04236.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.46875,
+          0.400879,
+          1.255859,
+          0.983398
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_SAY_SL_022485_E113.8_N22.6_20201116_L1A_HH_L10000000001_10240_03177.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.512207,
+          0.528809,
+          1.293945,
+          1.010742
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_SAY_SL_022485_E113.8_N22.6_20201116_L1A_HH_L10000000001_10752_03177.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.34668,
+          0.299316,
+          1.011719,
+          0.81543
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_SAY_SL_027602_E139.7_N35.5_20211106_L1A_HH_L10000000001_06656_07242.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.529297,
+          0.367188,
+          1.023438,
+          0.835938
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_SAY_SL_036575_E114.3_N30.6_20230722_L1A_HH_L10000000001_12288_20512.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.579102,
+          0.511719,
+          0.898438,
+          1.048828
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_SAY_SL_036575_E114.3_N30.6_20230722_L1A_HH_L10000000001_12797_19230.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.512695,
+          0.5,
+          0.917969,
+          1.072266
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_SAY_SL_036575_E115.8_N28.7_20230722_L1A_HH_L10000000001_10752_07686.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.499512,
+          0.426758,
+          1.041992,
+          0.779297
+        ],
+        "out_of_range_points": []
+      }
+    ]
+  },
+  "test": {
+    "bbox_bad_files": 6,
+    "point_bad_files": 3,
+    "rows": [
+      {
+        "file": "GF3B_KSC_SL_000297_W71.0_N42.4_20211213_L1A_HH_L10000129337_08704_15176.txt",
+        "line": 6,
+        "bbox_bad": false,
+        "point_bad": true,
+        "bbox": [
+          0.994141,
+          0.586426,
+          0.072266,
+          0.073242
+        ],
+        "out_of_range_points": [
+          1.030273
+        ]
+      },
+      {
+        "file": "GF3_KAS_SL_028685_E139.7_N35.5_20220120_L1A_HH_L10000000001_03584_05350.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.536133,
+          0.561035,
+          1.019531,
+          0.803711
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_KAS_SL_028685_E139.7_N35.5_20220120_L1A_HH_L10000000001_06144_11770.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.666016,
+          0.523926,
+          0.445312,
+          1.014648
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_KAS_SL_028685_E139.7_N35.5_20220120_L1A_HH_L10000000001_06656_11770.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.166992,
+          0.523438,
+          0.443359,
+          1.015625
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_KAS_SL_028685_E139.7_N35.5_20220120_L1A_HH_L10000000001_07680_14980.txt",
+        "line": 16,
+        "bbox_bad": false,
+        "point_bad": true,
+        "bbox": [
+          0.991211,
+          0.907715,
+          0.029297,
+          0.024414
+        ],
+        "out_of_range_points": [
+          1.00293
+        ]
+      },
+      {
+        "file": "GF3_KAS_SL_029363_E124.0_N10.3_20220308_L1A_HH_L10000000001_06144_18200.txt",
+        "line": 4,
+        "bbox_bad": false,
+        "point_bad": true,
+        "bbox": [
+          0.522949,
+          0.006348,
+          0.020508,
+          0.020508
+        ],
+        "out_of_range_points": [
+          -0.003906
+        ]
+      },
+      {
+        "file": "GF3_MYN_SL_028683_E115.8_N28.7_20220120_L1A_HH_L10000000001_03584_20972.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.5,
+          0.828125,
+          1.017578,
+          0.318359
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_MYN_SL_028683_E115.8_N28.7_20220120_L1A_HH_L10000000001_03584_22470.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.5,
+          0.328125,
+          1.017578,
+          0.318359
+        ],
+        "out_of_range_points": []
+      },
+      {
+        "file": "GF3_MYN_SL_028683_E115.8_N28.7_20220120_L1A_HH_L10000000001_04608_26964.txt",
+        "line": 1,
+        "bbox_bad": true,
+        "point_bad": false,
+        "bbox": [
+          0.5,
+          0.605469,
+          1.03125,
+          0.544922
+        ],
+        "out_of_range_points": []
+      }
+    ]
+  }
+}
