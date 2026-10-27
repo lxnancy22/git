@@ -1,0 +1,55 @@
+# Local datasets and generated training artifacts
+/data/
+/datasets/
+/runs/
+/outputs/
+/checkpoints/
+/weights/
+/logs/
+/tmp/
+/wandb/
+/mlruns/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.engine
+*.safetensors
+*.npy
+*.npz
+*.h5
+*.hdf5
+*.zip
+*.7z
+*.tar
+*.tar.gz
+
+# Python and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.ipynb_checkpoints/
+
+# Credentials and local machine settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+.ssh/
+/configs/local/
+/configs/*.local.yaml
+.vscode/
+.idea/
+
+# Operating systems
+Thumbs.db
+Desktop.ini
+.DS_Store
