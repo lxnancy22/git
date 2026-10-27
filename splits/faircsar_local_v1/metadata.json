@@ -1,0 +1,183 @@
+{
+  "version": "faircsar_local_v1",
+  "status": "frozen local curated protocol; official annotation semantics not fully verified",
+  "source_fingerprint_sha256": "942fbd8429296fb3fefa1cc5b47206aa8741190b7493d4817ad73763ea5f323a",
+  "source_root_at_creation": "D:\\SAR\\project\\FAIR-CSAR-Full-Pose-Ordered\\FAIR-CSAR-Full-Pose-Ordered",
+  "script_sha256": "c506053569359ac30c1f0f740303412e90ccfa05a4555ff6c33daf8e42fbefae",
+  "names": [
+    "Aircraft",
+    "Ship",
+    "Oil tank",
+    "Bridge",
+    "Tower Crane"
+  ],
+  "pose_shape": [
+    9,
+    3
+  ],
+  "assignment": {
+    "seed": 20261027,
+    "target_val_ratio": 0.2,
+    "candidate_count": 5000,
+    "algorithm": "source-scene groups unioned by byte-identical PNG; choose fixed number of groups using seeded candidates and label-only balance objective",
+    "validation_group_count": 21,
+    "balance_score": 0.023676343132549786,
+    "duplicates": []
+  },
+  "summary": {
+    "train": {
+      "images": 9582,
+      "objects": 55906,
+      "classes": {
+        "0": 16271,
+        "1": 23904,
+        "2": 12691,
+        "3": 1690,
+        "4": 1350
+      },
+      "source_scenes": 84,
+      "location_tokens": [
+        "E100.9_N12.6",
+        "E104.0_N1.3",
+        "E104.0_N1.4",
+        "E113.8_N22.6",
+        "E115.8_N28.7",
+        "E116.6_N40.1",
+        "E117.3_N39.2",
+        "E117.4_N39.2",
+        "E120.3_N22.6",
+        "E120.3_N22.7",
+        "E120.8_N27.7",
+        "E121.0_N14.5",
+        "E121.0_N14.6",
+        "E121.3_N25.1",
+        "E121.3_N31.2",
+        "E121.5_N31.0",
+        "E122.4_N29.9",
+        "E124.0_N10.3",
+        "E126.4_N37.4",
+        "E128.6_N35.1",
+        "E128.7_N35.1",
+        "E129.0_N35.1",
+        "E129.1_N35.1",
+        "E139.7_N35.4",
+        "E139.7_N35.5",
+        "E24.7_N48.9",
+        "E35.9_N34.9",
+        "E43.1_N11.5",
+        "E43.2_N11.5",
+        "E77.1_N28.6",
+        "W117.2_N32.7",
+        "W157.9_N21.3",
+        "W157.9_N21.4",
+        "W158.0_N21.3",
+        "W158.0_N21.4"
+      ],
+      "boxes_clipped": 6373,
+      "points_masked": 19
+    },
+    "val": {
+      "images": 2377,
+      "objects": 13392,
+      "classes": {
+        "0": 4146,
+        "1": 5809,
+        "2": 2673,
+        "3": 424,
+        "4": 340
+      },
+      "source_scenes": 21,
+      "location_tokens": [
+        "E100.9_N12.6",
+        "E104.0_N1.3",
+        "E104.0_N1.4",
+        "E114.2_N30.8",
+        "E114.3_N30.6",
+        "E117.3_N39.2",
+        "E118.1_N24.5",
+        "E120.9_N14.6",
+        "E121.0_N14.6",
+        "E122.5_N30.7",
+        "E124.0_N10.3",
+        "E139.7_N35.5",
+        "E77.1_N28.6",
+        "W117.2_N32.7",
+        "W157.9_N21.4"
+      ],
+      "boxes_clipped": 1490,
+      "points_masked": 7
+    },
+    "test": {
+      "images": 2701,
+      "objects": 15982,
+      "classes": {
+        "0": 3062,
+        "1": 7500,
+        "2": 4062,
+        "3": 693,
+        "4": 665
+      },
+      "source_scenes": 26,
+      "location_tokens": [
+        "E100.9_N12.6",
+        "E104.0_N1.3",
+        "E115.8_N28.7",
+        "E116.6_N40.1",
+        "E117.3_N39.2",
+        "E118.1_N24.5",
+        "E118.7_N32.1",
+        "E120.3_N22.6",
+        "E121.0_N14.6",
+        "E121.1_N27.9",
+        "E121.2_N25.1",
+        "E121.3_N31.2",
+        "E121.5_N31.4",
+        "E122.5_N30.7",
+        "E124.0_N10.3",
+        "E129.0_N35.1",
+        "E139.7_N35.5",
+        "E140.4_N35.8",
+        "E24.7_N48.9",
+        "E35.0_N32.8",
+        "E43.2_N11.5",
+        "E77.1_N28.6",
+        "W71.0_N42.4"
+      ],
+      "boxes_clipped": 1533,
+      "points_masked": 3
+    },
+    "quarantine": {
+      "images": 5,
+      "objects": 5,
+      "classes": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 5
+      },
+      "source_scenes": 1,
+      "location_tokens": [
+        "E139.7_N35.5"
+      ],
+      "boxes_clipped": 5,
+      "points_masked": 0
+    }
+  },
+  "policy": {
+    "boxes": "positive intersection with [0,1]^2; same 9-decimal box text for both tasks",
+    "points": "original order retained; in-image inclusive [0,1] -> (x,y,1); off-image -> (0,0,0)",
+    "point_flag": "label validity, not observed physical visibility",
+    "class_recheck": "source class unchanged; five unresolved source-test images quarantined",
+    "test": "source-test membership retained except explicit quarantine; this is not the untouched official benchmark",
+    "images": "no pixel changes; SHA-256 covers every source PNG"
+  },
+  "limitations": [
+    "Only source-scene and exact-byte duplicates are blocked across splits; nearby geography and different-date overlap may remain.",
+    "Input is local processed PNG/YOLO data, not verified original SLC/XML.",
+    "Official object-level evidence was unavailable; class names inherit legacy mapping with quarantine."
+  ],
+  "packet_format": 2,
+  "label_checksum_storage": "manifest.csv: detect_label_sha256, pose_label_sha256",
+  "packaging_script_sha256": "050c6bab640bb9cb67393a4adda4206906256c8c409798cb48bd932d4bb6344f"
+}

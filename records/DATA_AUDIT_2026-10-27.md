@@ -75,3 +75,5 @@ python scripts/audit_fair_csar.py --project D:/SAR/project --output records/fair
 ```
 
 该脚本只读源数据，唯一写入目标是指定的 JSON。完整扫描需数分钟。场景和越界明细为本次补充检查结果，尚未集成至主脚本。
+
+补充回查：扩大到旧项目外层后发现 `project/yolov10-main/PCA_wash_dataset.py` 和 `align_dataset.py`。此前脚本搜索范围不完整，详见后续 `DATA_FREEZE_2026-10-27.md`。数据整理与划分现已作为独立 v1 冻结，本文保留初次检查时的原始统计。

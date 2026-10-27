@@ -1,0 +1,27 @@
+{
+  "version": "faircsar_local_v1",
+  "source": "local FAIR-CSAR-Full-Pose-Ordered PNG and 23-column YOLO labels",
+  "source_names_status": "legacy mapping retained; original official object-level annotations unavailable",
+  "names": ["Aircraft", "Ship", "Oil tank", "Bridge", "Tower Crane"],
+  "quarantine": "five unresolved class-4 source-test images listed in splits/faircsar_local_v1/manifest.csv",
+  "box_policy": "intersect source xyxy box with normalized image rectangle; encode positive visible intersection as cxcywh",
+  "point_policy": {
+    "shape": [9, 3],
+    "order": "preserve original indices",
+    "in_image": "preserve x,y and set validity=1",
+    "off_image": "write x=0,y=0,validity=0; do not clamp points to image edges",
+    "validity_meaning": "labelled in-image coordinate, not observed physical visibility"
+  },
+  "label_precision": 9,
+  "train_val_group": "source image prefix; union groups if any PNG bytes are identical",
+  "seed": 20261027,
+  "target_validation_fraction": 0.2,
+  "candidate_partitions": 5000,
+  "selection_objective": "0.4 relative image-count error + 0.6 mean relative five-class object-count error, using source trainval labels only",
+  "test_policy": "retain source-test membership except explicit quarantine; derived labels use the same geometry policy as training",
+  "source_immutable": true,
+  "images": "no resampling, rotation, pixel changes or recompression",
+  "comparison": "Detect and Pose must have identical image names, object row counts, classes and first five label columns",
+  "augmentation_note": "Before training, use the same augmentation in all groups; disable flips/rotations until ordered-point correspondence has been verified",
+  "benchmark_scope": "local curated comparison; not unchanged official FAIR-CSAR metrics and not geographic-domain holdout"
+}

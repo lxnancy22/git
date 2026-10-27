@@ -1,0 +1,55 @@
+{
+  "status": "Unresolved: original official object-level labels unavailable; no relabelling. Quarantine five source-test images for curated v1.",
+  "archive_checks": {
+    "FAIR-CSAR-Full-Pose-Ordered.zip": {
+      "GF3_KAS_SL_028685_E139.7_N35.5_20220120_L1A_HH_L10000000001_03072_05350.txt": {
+        "member": "FAIR-CSAR-Full-Pose-Ordered/test/labels/GF3_KAS_SL_028685_E139.7_N35.5_20220120_L1A_HH_L10000000001_03072_05350.txt",
+        "class_at_row": "4"
+      },
+      "GF3_KAS_SL_028685_E139.7_N35.5_20220120_L1A_HH_L10000000001_03584_05350.txt": {
+        "member": "FAIR-CSAR-Full-Pose-Ordered/test/labels/GF3_KAS_SL_028685_E139.7_N35.5_20220120_L1A_HH_L10000000001_03584_05350.txt",
+        "class_at_row": "4"
+      },
+      "GF3_KAS_SL_028685_E139.7_N35.5_20220120_L1A_HH_L10000000001_03584_06420.txt": {
+        "member": "FAIR-CSAR-Full-Pose-Ordered/test/labels/GF3_KAS_SL_028685_E139.7_N35.5_20220120_L1A_HH_L10000000001_03584_06420.txt",
+        "class_at_row": "4"
+      },
+      "GF3_KAS_SL_028685_E139.7_N35.5_20220120_L1A_HH_L10000000001_04096_05350.txt": {
+        "member": "FAIR-CSAR-Full-Pose-Ordered/test/labels/GF3_KAS_SL_028685_E139.7_N35.5_20220120_L1A_HH_L10000000001_04096_05350.txt",
+        "class_at_row": "4"
+      },
+      "GF3_KAS_SL_028685_E139.7_N35.5_20220120_L1A_HH_L10000000001_04096_06420.txt": {
+        "member": "FAIR-CSAR-Full-Pose-Ordered/test/labels/GF3_KAS_SL_028685_E139.7_N35.5_20220120_L1A_HH_L10000000001_04096_06420.txt",
+        "class_at_row": "4"
+      }
+    },
+    "FAIR-CSAR-Mini-Pose-Ordered.zip": {
+      "GF3_KAS_SL_028685_E139.7_N35.5_20220120_L1A_HH_L10000000001_04096_06420.txt": {
+        "member": "test/labels/GF3_KAS_SL_028685_E139.7_N35.5_20220120_L1A_HH_L10000000001_04096_06420.txt",
+        "class_at_row": "4"
+      }
+    },
+    "FAIR-CSAR-Mini-Pose.zip": {
+      "GF3_KAS_SL_028685_E139.7_N35.5_20220120_L1A_HH_L10000000001_04096_06420.txt": {
+        "member": "FAIR-CSAR-Mini-Pose/test/labels/GF3_KAS_SL_028685_E139.7_N35.5_20220120_L1A_HH_L10000000001_04096_06420.txt",
+        "class_at_row": "4"
+      }
+    },
+    "FAIR-CSAR-Mini.zip": {}
+  },
+  "local_scripts": {
+    "PCA_wash_dataset.py": "Preserves class IDs; applies radial sorting to all classes, unlike observed Full ordering.",
+    "align_dataset.py": "Preserves class IDs; rotates each object and recomputes boxes.",
+    "FAIR-CSAR-Full-Raw": "Not found under D:/SAR."
+  },
+  "official_sources": [
+    {
+      "url": "https://doi.org/10.57760/sciencedb.radars.00019",
+      "finding": "Dataset metadata accessible via search; no object-level source annotation acquired."
+    },
+    {
+      "url": "https://radars.ac.cn/web/data/getData?newsColumnId=59937a70-2a40-4027-a32d-df36753bf6ae&pageType=en",
+      "finding": "Official overview retrieved from search; direct page returned HTTP 403."
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "version": "faircsar_local_v1",
+  "status": "passed",
+  "manifest_sha256": "6d6b0c706cbb402e8f273dc297e108b69e2b2f6d652c27c08316d2064671b158",
+  "source_fingerprint_sha256": "942fbd8429296fb3fefa1cc5b47206aa8741190b7493d4817ad73763ea5f323a",
+  "validated_image_pairs": 14660,
+  "totals": {
+    "train": {
+      "classes": {
+        "3": 1690,
+        "2": 12691,
+        "0": 16271,
+        "1": 23904,
+        "4": 1350
+      },
+      "masked_points": 19,
+      "valid_points": 503135
+    },
+    "val": {
+      "classes": {
+        "3": 424,
+        "2": 2673,
+        "0": 4146,
+        "1": 5809,
+        "4": 340
+      },
+      "masked_points": 7,
+      "valid_points": 120521
+    },
+    "test": {
+      "classes": {
+        "1": 7500,
+        "2": 4062,
+        "0": 3062,
+        "3": 693,
+        "4": 665
+      },
+      "masked_points": 3,
+      "valid_points": 143835
+    }
+  },
+  "checks": [
+    "frozen packet checksums",
+    "split lists and exact file inventories",
+    "all derived Detect/Pose label SHA-256",
+    "identical class/box prefix and object rows",
+    "finite coordinates and valid masks",
+    "linked image file identity",
+    "cross-split scene, filename and source-PNG hash disjointness"
+  ],
+  "limits": [
+    "No full training-framework loader run yet.",
+    "Image bytes were verified during freeze/materialization; this check does not hash all linked images again."
+  ]
+}
