@@ -6,11 +6,26 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from train_e00 import REPO, check_dataset_evidence, make_data_yaml, select_rows
+from train_e00 import REPO, check_dataset_evidence, check_full_protocol, make_data_yaml, select_rows
 from freeze_dataset import sha256
 
 
 class TrainingProtocolTests(unittest.TestCase):
+    def test_full_run_rejects_changed_hyperparameters(self):
+        config = json.loads((REPO / "configs/e00_yolov8s.json").read_text(encoding="utf-8"))
+        config["fliplr"] = 0.5
+        with self.assertRaisesRegex(ValueError, "Training config"):
+            check_full_protocol(config, None, 0, "unused")
+
+    def test_full_run_rejects_legacy_weights(self):
+        config = json.loads((REPO / "configs/e00_yolov8s.json").read_text(encoding="utf-8"))
+        lock = json.loads((REPO / "configs/e00_protocol_v1.json").read_text(encoding="utf-8"))
+        with tempfile.TemporaryDirectory() as tmp:
+            weights = Path(tmp) / "yolov8s.pt"
+            weights.write_bytes(b"same filename does not mean same checkpoint")
+            with self.assertRaisesRegex(ValueError, "Initialization weights"):
+                check_full_protocol(config, weights, 0, lock["dataset_manifest_sha256"])
+
     def test_test_and_quarantine_are_rejected(self):
         for split in ("test", "quarantine"):
             with self.assertRaises(ValueError):

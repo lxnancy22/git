@@ -7,6 +7,7 @@ The smoke test uses random initialization; full runs require local weights.
 import argparse
 import csv
 from datetime import datetime, timezone
+import hashlib
 import json
 import math
 import os
@@ -80,6 +81,19 @@ def check_dataset_evidence(data, frozen, report):
     return digest
 
 
+def check_full_protocol(config, weights, seed, manifest_sha):
+    lock = json.loads((REPO / "configs/e00_protocol_v1.json").read_text(encoding="utf-8"))
+    digest = hashlib.sha256(json.dumps(config, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+    if digest != lock["training_config_canonical_sha256"]:
+        raise ValueError("Training config differs from the frozen E00 protocol; use a new protocol for changes")
+    if manifest_sha != lock["dataset_manifest_sha256"] or seed not in lock["seeds"]:
+        raise ValueError("Data or seed differs from the frozen E00 protocol")
+    expected = lock["initialization"]
+    if weights is None or weights.stat().st_size != expected["bytes"] or sha256(weights) != expected["sha256"]:
+        raise ValueError("Initialization weights differ from the frozen official-release copy")
+    return lock
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--mode", choices=("smoke", "resume-smoke", "full"), default="smoke")
@@ -112,6 +126,8 @@ def main():
     frozen = REPO / "splits/faircsar_local_v1"
     data = args.data_root.resolve()
     manifest_sha = check_dataset_evidence(data, frozen, args.validation_report)
+    config = json.loads((REPO / "configs/e00_yolov8s.json").read_text(encoding="utf-8"))
+    protocol = check_full_protocol(config, args.weights, args.seed, manifest_sha) if args.mode == "full" else None
 
     # Set before CUDA context creation, for deterministic CUDA matrix operations.
     os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":4096:8")
@@ -153,7 +169,9 @@ def main():
         "config_sha256": sha256(REPO / "configs/e00_yolov8s.json"),
         "initialization": str(args.weights.resolve()) if args.weights else "random YOLOv8s (smoke only)",
         "initial_weights_sha256": sha256(args.weights) if args.weights else None,
-        "limits": "A smoke result verifies the pipeline only; no detection performance conclusion.",
+        "protocol": protocol,
+        "limits": "Single-seed baseline; not evidence of a point-guidance benefit." if protocol else
+                  "A smoke result verifies the pipeline only; no detection performance conclusion.",
     }
     if previous:
         record = previous
@@ -168,7 +186,6 @@ def main():
                        if p.is_file() and p.suffix in (".py", ".yaml")}
         write_json(run_dir / "upstream-source-sha256.json", code_hashes)
         data_yaml, expected = make_data_yaml(data, frozen, run_dir, args.mode == "smoke")
-        config = json.loads((REPO / "configs/e00_yolov8s.json").read_text(encoding="utf-8"))
         config.update(data=str(data_yaml), project=str(run_dir.parent), name=args.name,
                       exist_ok=True, seed=args.seed, pretrained=bool(args.weights))
         if args.mode == "smoke":

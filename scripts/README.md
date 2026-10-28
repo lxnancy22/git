@@ -18,8 +18,8 @@
 
 `--mode resume-smoke`：总共 3 轮，第 1 轮保存后有意暂停，然后在新进程恢复，检查轮次、optimizer、EMA，最后检查完整 CSV 和权重。
 
-`prepare_e00_weights.py`：从固定官方 release 下载 YOLOv8s COCO 预训练权重，校验官方 API 中记录的大小并保存本地 SHA-256 和来源。上游该 asset 未提供 digest，需将首次下载 SHA 另行登记为本项目固定值；不会启动训练。
+`prepare_e00_weights.py`：从固定官方 release 下载 YOLOv8s COCO 预训练权重，校验官方 API 中记录的大小并保存本地 SHA-256 和来源。首次下载的 SHA 已登记为本项目固定值，之后下载与 full 训练均按 `configs/e00_protocol_v1.json` 校验；不会启动训练。
 
 `test_training_protocol.py`：不依赖 GPU 的训练协议检查，包括拒绝 test/隔离集输入、抽样可复现、固定完整划分计数和验证报告状态/哈希检查。统一运行 `python -m unittest discover -s scripts -p 'test_*.py' -v`。
 
-待实现/执行：远程短训练、断点恢复、共同预训练初始化规则、E01–E03 与独立评估。
+待实现/执行：完整 E00、后续实验组共同参数初值核对、E01–E03 与独立评估。短训练与断点恢复用户已报告通过。

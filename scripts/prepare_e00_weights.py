@@ -16,6 +16,12 @@ URL = "https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8s.pt
 SIZE = 22588772  # Official release API asset size checked 2026-10-28.
 
 
+def check_locked_copy(path):
+    lock = json.loads((REPO / "configs/e00_protocol_v1.json").read_text(encoding="utf-8"))["initialization"]
+    if path.stat().st_size != lock["bytes"] or sha256(path) != lock["sha256"]:
+        raise ValueError("Artifact differs from the frozen E00 initialization copy")
+
+
 def main():
     target = REPO / "weights/pretrained/v8.3.0/yolov8s.pt"
     metadata_path = target.with_suffix(".source.json")
@@ -25,6 +31,7 @@ def main():
         metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
         if metadata["url"] != URL or metadata["sha256"] != sha256(target) or target.stat().st_size != SIZE:
             raise ValueError("Existing artifact differs from its source record")
+        check_locked_copy(target)
         print("Already verified:", target)
         print("SHA256:", metadata["sha256"])
         return
@@ -47,6 +54,7 @@ def main():
     if partial.stat().st_size != SIZE:
         raise ValueError("Downloaded size differs from official release metadata; partial file retained")
     digest = sha256(partial)
+    check_locked_copy(partial)
     partial.rename(target)
     metadata_path.write_text(json.dumps({
         "url": URL, "release": "v8.3.0", "name": "yolov8s.pt", "bytes": SIZE,
