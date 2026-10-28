@@ -1,0 +1,73 @@
+{
+  "policy_id": "faircsar_local_v2_duplicate_resolution",
+  "source_version": "faircsar_local_v1",
+  "status": "selection rule frozen; v2 dataset not yet materialized",
+  "principle": "For identical float32(class,xywh) within an image, retain the earliest source row; apply the same retained row indices to Detect and Pose. This is deterministic, not a claim of superior point accuracy.",
+  "source_labels_unchanged": true,
+  "train_removed_objects": 6,
+  "expected_train_objects_after": 55900,
+  "expected_val_objects_after": 13392,
+  "expected_test_objects_after": 15982,
+  "cases": [
+    {
+      "stem": "GF3_MYN_SL_028438_E139.7_N35.5_20220103_L1A_HH_L10000000001_06144_26444",
+      "split": "train",
+      "class_id": 2,
+      "keep_row_1based": 1,
+      "drop_row_1based": 2,
+      "duplicate_box": "2 0.937500000 0.912598000 0.097656000 0.086914000",
+      "pose_label_sha256": "e732b60a3eb3933d269c237aa286e3b853a04eb61bb0a8f822039b3db085a065",
+      "detect_label_sha256": "f23df51d7923bb52e2c945c551f81122134086a3d538b16b7372843acce60d29"
+    },
+    {
+      "stem": "GF3_MYN_SL_028438_E139.7_N35.5_20220103_L1A_HH_L10000000001_06144_27646",
+      "split": "train",
+      "class_id": 2,
+      "keep_row_1based": 1,
+      "drop_row_1based": 2,
+      "duplicate_box": "2 0.937500000 0.413086000 0.097656000 0.087891000",
+      "pose_label_sha256": "1cffaf7e2a01f4b027ec392bb771011879f7a1e1d4ea7365b82f506ef66a61dd",
+      "detect_label_sha256": "74e6c6441e0650f6b612d2bf77f9b00942d50144bfa6cf97c3aff1b067c877b6"
+    },
+    {
+      "stem": "GF3_MYN_SL_028438_E139.7_N35.5_20220103_L1A_HH_L10000000001_06144_28438",
+      "split": "train",
+      "class_id": 2,
+      "keep_row_1based": 1,
+      "drop_row_1based": 2,
+      "duplicate_box": "2 0.937500000 0.083496000 0.097656000 0.086914000",
+      "pose_label_sha256": "5ef42bb428a33ca5fec24db6a1bf525099b2d6190dfdda708650f1d6a92469bc",
+      "detect_label_sha256": "c702aba5764c9eaadf3eb7a7592409ca63ac7aec13647970e45b81a5acc96b67"
+    },
+    {
+      "stem": "GF3_MYN_SL_028438_E139.7_N35.5_20220103_L1A_HH_L10000000001_06656_26444",
+      "split": "train",
+      "class_id": 2,
+      "keep_row_1based": 1,
+      "drop_row_1based": 8,
+      "duplicate_box": "2 0.437500000 0.912598000 0.097656000 0.086914000",
+      "pose_label_sha256": "9b0573b922de5851434a4faa4811f417da0afb68d67db0a2fa35052be7077ba5",
+      "detect_label_sha256": "957f4debda86a09b71cb5e67673ec04b90382c1016a8cbda0fa5ec9a51f49cba"
+    },
+    {
+      "stem": "GF3_MYN_SL_028438_E139.7_N35.5_20220103_L1A_HH_L10000000001_06656_27646",
+      "split": "train",
+      "class_id": 2,
+      "keep_row_1based": 1,
+      "drop_row_1based": 10,
+      "duplicate_box": "2 0.437500000 0.413086000 0.097656000 0.087891000",
+      "pose_label_sha256": "90eb700a715a7ae9c9ef82470f5c159ec39db240b8a4aaa3de8cb0ad8dd18b30",
+      "detect_label_sha256": "f7f9f6a60cd19d9809518c9a837c7adb2e87b851598f7322d691e74e8282cb35"
+    },
+    {
+      "stem": "GF3_MYN_SL_028438_E139.7_N35.5_20220103_L1A_HH_L10000000001_06656_28438",
+      "split": "train",
+      "class_id": 2,
+      "keep_row_1based": 1,
+      "drop_row_1based": 6,
+      "duplicate_box": "2 0.437500000 0.083496000 0.097656000 0.086914000",
+      "pose_label_sha256": "39224e1787fae68419d5579e75aba9dca9a6c3cbb90a35cac589963e1932f386",
+      "detect_label_sha256": "fc526ea0bd95dfe0ea57cf156fa2da5f4094b5c72b7d21ad15913d0c2ffaf221"
+    }
+  ]
+}
