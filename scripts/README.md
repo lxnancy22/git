@@ -16,6 +16,10 @@
 
 `train_e00.py`：Ultralytics 8.3.235 的 E00 入口。`--mode smoke` 使用 64 张 train 和 32 张 val 跑 2 轮，核对实际 loader 图片/目标数、保存模型并重载推理，记录环境及哈希；拒绝覆盖已存在的运行目录。运行方式和正式实验前置条件见 `records/E00_SETUP_2026-10-28.md`。
 
+`--mode resume-smoke`：总共 3 轮，第 1 轮保存后有意暂停，然后在新进程恢复，检查轮次、optimizer、EMA，最后检查完整 CSV 和权重。
+
+`prepare_e00_weights.py`：从固定官方 release 下载 YOLOv8s COCO 预训练权重，校验官方 API 中记录的大小并保存本地 SHA-256 和来源。上游该 asset 未提供 digest，需将首次下载 SHA 另行登记为本项目固定值；不会启动训练。
+
 `test_training_protocol.py`：不依赖 GPU 的训练协议检查，包括拒绝 test/隔离集输入、抽样可复现、固定完整划分计数和验证报告状态/哈希检查。统一运行 `python -m unittest discover -s scripts -p 'test_*.py' -v`。
 
 待实现/执行：远程短训练、断点恢复、共同预训练初始化规则、E01–E03 与独立评估。

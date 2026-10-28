@@ -24,6 +24,10 @@ REPO = Path(__file__).resolve().parents[1]
 UPSTREAM = "8.3.235"
 
 
+class PlannedPause(Exception):
+    """End the checkpoint probe before upstream strips optimizer state."""
+
+
 def write_json(path, value):
     path.write_text(json.dumps(value, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
@@ -78,15 +82,27 @@ def check_dataset_evidence(data, frozen, report):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--mode", choices=("smoke", "full"), default="smoke")
+    parser.add_argument("--mode", choices=("smoke", "resume-smoke", "full"), default="smoke")
     parser.add_argument("--data-root", type=Path, default=Path("/root/datasets/faircsar_local_v1"))
     parser.add_argument("--validation-report", type=Path, default=REPO / "outputs/server-data-validation.json")
     parser.add_argument("--name", required=True, help="Unique run directory name; existing directories are refused")
     parser.add_argument("--weights", type=Path, help="Local, verified YOLOv8s initialization; required for full")
     parser.add_argument("--seed", type=int, default=0)
+    parser.add_argument("--probe-stage", choices=("interrupt", "resume"), help=argparse.SUPPRESS)
     args = parser.parse_args()
     if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.-]*", args.name):
         parser.error("Use a simple unique run name without directory separators")
+    if args.probe_stage and args.mode != "smoke":
+        parser.error("Checkpoint probe stages only work in smoke mode")
+    if args.mode == "resume-smoke":
+        if args.weights:
+            parser.error("The checkpoint probe uses random initialization")
+        child = [sys.executable, "-u", str(Path(__file__).resolve()), "--mode", "smoke",
+                 "--name", args.name, "--data-root", str(args.data_root),
+                 "--validation-report", str(args.validation_report), "--seed", str(args.seed)]
+        for stage in ("interrupt", "resume"):
+            subprocess.run(child + ["--probe-stage", stage], cwd=REPO, check=True)
+        return
     if args.mode == "full" and args.weights is None:
         parser.error("Full training requires --weights with a verified local initialization checkpoint")
     if args.weights is not None and not args.weights.is_file():
@@ -114,7 +130,17 @@ def main():
         raise RuntimeError("CUDA is not available")
 
     run_dir = REPO / "runs" / args.name
-    run_dir.mkdir(parents=True, exist_ok=False)
+    previous = None
+    if args.probe_stage == "resume":
+        previous = json.loads((run_dir / "run-record.json").read_text(encoding="utf-8"))
+        if previous.get("status") != "paused_for_resume_probe":
+            raise ValueError("Only the deliberately paused checkpoint probe can reuse a run directory")
+        if previous["git_commit"] != command(["git", "rev-parse", "HEAD"]) or previous["manifest_sha256"] != manifest_sha:
+            raise ValueError("Code or data changed between checkpoint probe stages")
+        if sha256(run_dir / "weights/last.pt") != previous["resume_checkpoint_sha256"]:
+            raise ValueError("Paused checkpoint changed before resume")
+    else:
+        run_dir.mkdir(parents=True, exist_ok=False)
     record = {
         "status": "preparing", "mode": args.mode, "experiment": "E00",
         "started_utc": datetime.now(timezone.utc).isoformat(),
@@ -129,6 +155,9 @@ def main():
         "initial_weights_sha256": sha256(args.weights) if args.weights else None,
         "limits": "A smoke result verifies the pipeline only; no detection performance conclusion.",
     }
+    if previous:
+        record = previous
+        record.update(status="resuming", resume_command=sys.argv)
     write_json(run_dir / "run-record.json", record)
     try:
         (run_dir / "pip-freeze.txt").write_text(command([sys.executable, "-m", "pip", "freeze"]) + "\n", encoding="utf-8")
@@ -143,7 +172,7 @@ def main():
         config.update(data=str(data_yaml), project=str(run_dir.parent), name=args.name,
                       exist_ok=True, seed=args.seed, pretrained=bool(args.weights))
         if args.mode == "smoke":
-            config.update(epochs=2, warmup_epochs=0.0)
+            config.update(epochs=3 if args.probe_stage else 2, warmup_epochs=0.0)
         write_json(run_dir / "requested-train-args.json", config)
         record["expected_loader_counts"] = expected
         init_seeds(args.seed, deterministic=True)
@@ -160,12 +189,40 @@ def main():
             write_json(run_dir / "loader-counts.json", actual)
             if actual != expected:
                 raise RuntimeError("Framework dropped images/objects: " + repr(actual) + " != " + repr(expected))
+            if args.probe_stage == "resume":
+                if trainer.start_epoch != 1 or not trainer.optimizer.state or trainer.ema.updates <= 0:
+                    raise RuntimeError("Resume failed to restore epoch, optimizer state, or EMA updates")
+                record.update(resumed_from_epoch=trainer.start_epoch, resumed_optimizer_states=len(trainer.optimizer.state),
+                              resumed_ema_updates=trainer.ema.updates)
             (run_dir / "train-transforms.txt").write_text(str(trainer.train_loader.dataset.transforms), encoding="utf-8")
             record["status"] = "running"
             write_json(run_dir / "run-record.json", record)
 
+        if args.probe_stage == "resume":
+            model = YOLO(str(run_dir / "weights/last.pt"))
         model.add_callback("on_train_start", audit_loaders)
-        model.train(**config)
+
+        def pause_after_checkpoint(trainer):
+            if trainer.epoch == 0:
+                # A completed training checkpoint has its optimizer stripped. Interrupt
+                # after the first normal checkpoint instead of resuming a finished run.
+                checkpoint = torch.load(trainer.last, map_location="cpu")
+                if checkpoint["epoch"] != 0 or not checkpoint.get("optimizer", {}).get("state"):
+                    raise RuntimeError("First checkpoint lacks resumable optimizer state")
+                record.update(status="paused_for_resume_probe", resume_checkpoint_sha256=sha256(trainer.last))
+                write_json(run_dir / "run-record.json", record)
+                raise PlannedPause()
+
+        if args.probe_stage == "interrupt":
+            model.add_callback("on_model_save", pause_after_checkpoint)
+        try:
+            if args.probe_stage == "resume":
+                model.train(resume=True)
+            else:
+                model.train(**config)
+        except PlannedPause:
+            print("Checkpoint saved after epoch 1; starting a fresh process to resume.", flush=True)
+            return
         weights = {}
         for name in ("best.pt", "last.pt"):
             checkpoint = run_dir / "weights" / name
