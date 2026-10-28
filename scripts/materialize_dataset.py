@@ -54,7 +54,7 @@ def process_item(task):
         if wanted is None or hashlib.sha256(text.encode()).hexdigest() != wanted:
             raise ValueError('Regenerated label differs from frozen version: '+member)
         dst_label = output/task_name/'labels'/split/(stem+'.txt')
-        dst_label.write_text(text, encoding='utf-8', newline='\n')
+        dst_label.write_bytes(text.encode('utf-8'))
         dst_image = output/task_name/'images'/split/(stem+'.png')
         if mode == 'hardlink':
             os.link(image, dst_image)

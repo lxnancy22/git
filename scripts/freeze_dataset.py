@@ -253,7 +253,7 @@ def main():
                 for task, key in [('detect', 'det_text'), ('pose', 'pose_text')]:
                     dest = output/'labels'/task/split/(row['stem']+'.txt')
                     dest.parent.mkdir(parents=True, exist_ok=True)
-                    dest.write_text(row[key], encoding='utf-8', newline='\n')
+                    dest.write_bytes(row[key].encode('utf-8'))
             else:
                 # Immutable unmodified source text for review, not training labels.
                 dest = output/'quarantine_labels'/row['origin']/(row['stem']+'.txt')
