@@ -19,7 +19,7 @@ class TrainingProtocolTests(unittest.TestCase):
 
     def test_full_run_rejects_legacy_weights(self):
         config = json.loads((REPO / "configs/e00_yolov8s.json").read_text(encoding="utf-8"))
-        lock = json.loads((REPO / "configs/e00_protocol_v1.json").read_text(encoding="utf-8"))
+        lock = json.loads((REPO / "configs/e00_protocol_v2.json").read_text(encoding="utf-8"))
         with tempfile.TemporaryDirectory() as tmp:
             weights = Path(tmp) / "yolov8s.pt"
             weights.write_bytes(b"same filename does not mean same checkpoint")

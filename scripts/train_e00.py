@@ -82,7 +82,7 @@ def check_dataset_evidence(data, frozen, report):
 
 
 def check_full_protocol(config, weights, seed, manifest_sha):
-    lock = json.loads((REPO / "configs/e00_protocol_v1.json").read_text(encoding="utf-8"))
+    lock = json.loads((REPO / "configs/e00_protocol_v2.json").read_text(encoding="utf-8"))
     digest = hashlib.sha256(json.dumps(config, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
     if digest != lock["training_config_canonical_sha256"]:
         raise ValueError("Training config differs from the frozen E00 protocol; use a new protocol for changes")
@@ -123,7 +123,7 @@ def main():
         parser.error("Local weights do not exist")
     if command(["git", "status", "--porcelain"]):
         raise ValueError("Commit tracked/untracked source changes before starting an experiment")
-    frozen = REPO / "splits/faircsar_local_v1"
+    frozen = REPO / ("splits/faircsar_local_v2" if args.mode == "full" else "splits/faircsar_local_v1")
     data = args.data_root.resolve()
     manifest_sha = check_dataset_evidence(data, frozen, args.validation_report)
     config = json.loads((REPO / "configs/e00_yolov8s.json").read_text(encoding="utf-8"))

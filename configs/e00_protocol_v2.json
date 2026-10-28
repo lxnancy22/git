@@ -1,0 +1,25 @@
+{
+  "version": "e00_faircsar_v2",
+  "frozen_date": "2026-10-28",
+  "upstream": "ultralytics==8.3.235",
+  "training_config": "e00_yolov8s.json",
+  "training_config_canonical_sha256": "9fca23e7b2b15607aeb7ff86268bde232773476a9f6fb2ea3f59c7c0f8d9634c",
+  "config_hash_encoding": "UTF-8 of json.dumps(config, sort_keys=True, separators=(',', ':'))",
+  "dataset_version": "faircsar_local_v2",
+  "dataset_manifest_sha256": "75e7f53d9d5f7b9199bd8f60dc7f952205daff50b86654747c818183776da637",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "initialization": {
+    "url": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8s.pt",
+    "bytes": 22588772,
+    "sha256": "1f47a78bf100391c2a140b7ac73a1caae18c32779be7d310658112f7ac9aa78a",
+    "digest_basis": "User-reported SHA-256 from official HTTPS download on server; not an upstream-published digest"
+  },
+  "checkpoint_selection": "Highest val Box mAP50:95; no test evaluation during training",
+  "initialization_rule": "All experiment arms reuse this identical COCO checkpoint for matching common tensors. New or mismatched tensors are seed-initialized. Later arms must audit matching tensor identity before training.",
+  "scope": "Frozen E00 protocol with v2 duplicate resolution. Same hyperparameters, initialization, split membership, images; train has six fewer duplicate-box targets.",
+  "parent_protocol": "e00_faircsar_v1"
+}

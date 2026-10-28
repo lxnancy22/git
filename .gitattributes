@@ -12,3 +12,4 @@
 *.ps1 text eol=crlf
 # Frozen artifacts are byte-addressed by SHA-256; preserve exact bytes on all hosts.
 /splits/faircsar_local_v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/splits/faircsar_local_v2/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
