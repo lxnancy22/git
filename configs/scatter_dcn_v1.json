@@ -1,0 +1,21 @@
+{
+  "version": "scatter_dcn_v1",
+  "parent": "e00_faircsar_v2",
+  "arms": {"E01": "free DCNv2 offsets", "E02": "free offsets plus predicted ordered-nine-point offsets"},
+  "seeds": [0, 1, 2],
+  "insertion": "P3 only, immediately before Detect; coarse points predicted before sampling at P3/P4/P5",
+  "channels": 128,
+  "kernel_size": 3,
+  "deform_groups": 1,
+  "offset_formula": "E01: residual; E02: residual + (2*raw_xy - regular_grid_xy), reordered to interleaved dy,dx",
+  "mask": "sigmoid learned 9-channel mask; multiply DCN output by 2; initial mask=0.5",
+  "initialization": "Dirac DCN kernel; zero residual/mask predictors; final coarse-point weights zero, xy bias regular_grid/2, validity bias zero",
+  "keypoint_shape": [9, 3],
+  "point_order": "frozen annotation order, no sorting",
+  "pose": 12.0,
+  "kobj": 1.0,
+  "point_loss": "ultralytics v8PoseLoss; uniform nine-point sigmas=1/9, invalid points masked, validity BCE",
+  "checkpoint_selection": "val Box mAP50:95 only; upstream tie behavior preserved",
+  "primary_comparison": "E01 vs E02, exact parameter match and identical seed initialization; E00 comparisons also include auxiliary supervision and added capacity",
+  "test_used": false
+}
