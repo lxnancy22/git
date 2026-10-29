@@ -1,0 +1,186 @@
+{
+  "metric_source": "Best epoch of training results.csv, selected by val Box mAP50:95. Final saved best.pt revalidation logged separately and may differ slightly.",
+  "dataset_version": "faircsar_local_v2",
+  "training_config": {
+    "task": "detect",
+    "epochs": 100,
+    "imgsz": 1024,
+    "batch": 8,
+    "nbs": 64,
+    "workers": 4,
+    "device": "0",
+    "seed": 0,
+    "deterministic": true,
+    "optimizer": "SGD",
+    "lr0": 0.01,
+    "lrf": 0.01,
+    "momentum": 0.937,
+    "weight_decay": 0.0005,
+    "warmup_epochs": 3.0,
+    "warmup_momentum": 0.8,
+    "warmup_bias_lr": 0.1,
+    "cos_lr": false,
+    "patience": 0,
+    "box": 7.5,
+    "cls": 0.5,
+    "dfl": 1.5,
+    "amp": false,
+    "cache": false,
+    "rect": false,
+    "multi_scale": false,
+    "compile": false,
+    "fraction": 1.0,
+    "hsv_h": 0.0,
+    "hsv_s": 0.0,
+    "hsv_v": 0.0,
+    "degrees": 0.0,
+    "translate": 0.1,
+    "scale": 0.5,
+    "shear": 0.0,
+    "perspective": 0.0,
+    "flipud": 0.0,
+    "fliplr": 0.0,
+    "bgr": 0.0,
+    "mosaic": 0.0,
+    "mixup": 0.0,
+    "cutmix": 0.0,
+    "copy_paste": 0.0,
+    "close_mosaic": 0,
+    "augmentations": [],
+    "val": true,
+    "split": "val",
+    "conf": 0.001,
+    "iou": 0.7,
+    "max_det": 300,
+    "save": true,
+    "save_period": -1,
+    "plots": true
+  },
+  "protocol": {
+    "version": "e00_faircsar_v2",
+    "frozen_date": "2026-10-28",
+    "upstream": "ultralytics==8.3.235",
+    "training_config": "e00_yolov8s.json",
+    "training_config_canonical_sha256": "9fca23e7b2b15607aeb7ff86268bde232773476a9f6fb2ea3f59c7c0f8d9634c",
+    "config_hash_encoding": "UTF-8 of json.dumps(config, sort_keys=True, separators=(',', ':'))",
+    "dataset_version": "faircsar_local_v2",
+    "dataset_manifest_sha256": "75e7f53d9d5f7b9199bd8f60dc7f952205daff50b86654747c818183776da637",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "initialization": {
+      "url": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8s.pt",
+      "bytes": 22588772,
+      "sha256": "1f47a78bf100391c2a140b7ac73a1caae18c32779be7d310658112f7ac9aa78a",
+      "digest_basis": "User-reported SHA-256 from official HTTPS download on server; not an upstream-published digest"
+    },
+    "checkpoint_selection": "Highest val Box mAP50:95; no test evaluation during training",
+    "initialization_rule": "All experiment arms reuse this identical COCO checkpoint for matching common tensors. New or mismatched tensors are seed-initialized. Later arms must audit matching tensor identity before training.",
+    "scope": "Frozen E00 protocol with v2 duplicate resolution. Same hyperparameters, initialization, split membership, images; train has six fewer duplicate-box targets.",
+    "parent_protocol": "e00_faircsar_v1"
+  },
+  "runs": [
+    {
+      "seed": 0,
+      "run": "E00_full_s0_002",
+      "status": "passed",
+      "pass_line": true,
+      "log_bytes": 11184715,
+      "epochs": 100,
+      "best_epoch": 72,
+      "val_mAP50": 0.62522,
+      "val_mAP50_95": 0.30585,
+      "hashes_match": true,
+      "checkpoint_sha256": {
+        "best.pt": "d02a0eacd1e6d0b37f5378eb6009affe1e9c1e1e5e09cd19f5b89a54df0f5fb3",
+        "last.pt": "08ae5f128e397e631178a21233ef2d7eab022c8ec27a27b92d54e8867b8191a4"
+      },
+      "missing": [],
+      "git_commit": "f364b680608ca98ab3cf6a3541c9f64cf6587ef7",
+      "started_utc": "2026-10-28T08:06:23.500150+00:00",
+      "finished_utc": "2026-10-28T11:48:48.615883+00:00",
+      "manifest_sha256": "75e7f53d9d5f7b9199bd8f60dc7f952205daff50b86654747c818183776da637",
+      "config_sha256": "c4c5ba25cf19d201c6490a13214f2f31b9593d6869c7a22743131d732182a3a4",
+      "initial_weights_sha256": "1f47a78bf100391c2a140b7ac73a1caae18c32779be7d310658112f7ac9aa78a",
+      "loaders": {
+        "train": {
+          "images": 9582,
+          "objects": 55900
+        },
+        "val": {
+          "images": 2377,
+          "objects": 13392
+        }
+      }
+    },
+    {
+      "seed": 1,
+      "run": "E00_full_s1_001",
+      "status": "passed",
+      "pass_line": true,
+      "log_bytes": 11234436,
+      "epochs": 100,
+      "best_epoch": 44,
+      "val_mAP50": 0.62651,
+      "val_mAP50_95": 0.29751,
+      "hashes_match": true,
+      "checkpoint_sha256": {
+        "best.pt": "1eb5a0323c82b0c5670e110976ba159782b21255f66a99a1aacd5ae0872cde28",
+        "last.pt": "15cd5465c0a94fd0a40067ce1182a70d66017677ebd72b1147521571d4526981"
+      },
+      "missing": [],
+      "git_commit": "f364b680608ca98ab3cf6a3541c9f64cf6587ef7",
+      "started_utc": "2026-10-28T12:22:30.171291+00:00",
+      "finished_utc": "2026-10-28T16:05:01.002583+00:00",
+      "manifest_sha256": "75e7f53d9d5f7b9199bd8f60dc7f952205daff50b86654747c818183776da637",
+      "config_sha256": "c4c5ba25cf19d201c6490a13214f2f31b9593d6869c7a22743131d732182a3a4",
+      "initial_weights_sha256": "1f47a78bf100391c2a140b7ac73a1caae18c32779be7d310658112f7ac9aa78a",
+      "loaders": {
+        "train": {
+          "images": 9582,
+          "objects": 55900
+        },
+        "val": {
+          "images": 2377,
+          "objects": 13392
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "run": "E00_full_s2_001",
+      "status": "passed",
+      "pass_line": true,
+      "log_bytes": 11240352,
+      "epochs": 100,
+      "best_epoch": 55,
+      "val_mAP50": 0.63002,
+      "val_mAP50_95": 0.30221,
+      "hashes_match": true,
+      "checkpoint_sha256": {
+        "best.pt": "215e2626cb2db83896fc820c7826e4bd6c296b9b0d6af7bb6367dd74c9f86d82",
+        "last.pt": "b708368afe0d98dacf6f9895ecfc1ddba7394cd7fd45705d2cfcbd21231dfcb8"
+      },
+      "missing": [],
+      "git_commit": "f364b680608ca98ab3cf6a3541c9f64cf6587ef7",
+      "started_utc": "2026-10-28T16:05:09.598246+00:00",
+      "finished_utc": "2026-10-28T19:47:52.085172+00:00",
+      "manifest_sha256": "75e7f53d9d5f7b9199bd8f60dc7f952205daff50b86654747c818183776da637",
+      "config_sha256": "c4c5ba25cf19d201c6490a13214f2f31b9593d6869c7a22743131d732182a3a4",
+      "initial_weights_sha256": "1f47a78bf100391c2a140b7ac73a1caae18c32779be7d310658112f7ac9aa78a",
+      "loaders": {
+        "train": {
+          "images": 9582,
+          "objects": 55900
+        },
+        "val": {
+          "images": 2377,
+          "objects": 13392
+        }
+      }
+    }
+  ],
+  "test_used": false
+}
